@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FingerMailMe — Send a tiny 🖕 anonymously</title>
+  <meta name="description" content="Send a tiny middle finger anonymously in a regular envelope. Funny. Simple. Discreet." />
+  <style>
+    :root{--bg:#0b0b0f;--card:#141422;--text:#f5f5f7;--muted:#b9b9c6;--accent:#ff4d4d;--line:#2a2a3b}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#07070b, #0b0b0f);color:var(--text)}
+    a{color:inherit}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 70px}
+    .top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+    .brand{font-weight:800;letter-spacing:.2px}
+    .pill{font-size:12px;border:1px solid var(--line);padding:6px 10px;border-radius:999px;color:var(--muted)}
+    .hero{margin-top:26px;background:radial-gradient(900px 300px at 20% 10%, rgba(255,77,77,.18), transparent 60%), var(--card);
+      border:1px solid var(--line);border-radius:18px;padding:26px}
+    h1{font-size:40px;line-height:1.05;margin:0 0 10px}
+    p{color:var(--muted);margin:10px 0 0;font-size:16px;line-height:1.5}
+    .ctaRow{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+    .btn{display:inline-block;padding:12px 16px;border-radius:12px;text-decoration:none;font-weight:700;border:1px solid var(--line);background:#1a1a2a}
+    .btn.primary{background:var(--accent);border-color:transparent;color:#0b0b0f}
+    .btn:active{transform:translateY(1px)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+    .card{background:rgba(20,20,34,.65);border:1px solid var(--line);border-radius:16px;padding:16px}
+    .k{font-weight:800;margin:0 0 6px}
+    .small{font-size:13px}
+    .hr{height:1px;background:var(--line);margin:18px 0}
+    .sectionTitle{font-weight:800;margin:0 0 8px}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .stepNum{font-weight:900;color:#fff;opacity:.9}
+    .faq{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .foot{margin-top:20px;color:var(--muted);font-size:12px}
+    @media (max-width:800px){
+      h1{font-size:34px}
+      .grid,.steps{grid-template-columns:1fr}
+      .faq{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">FingerMailMe</div>
+      <div class="pill">Anonymous • Discreet • Funny</div>
+    </div>
+
+    <div class="hero">
+      <h1>Send a tiny 🖕 anonymously.</h1>
+      <p>
+        A small middle finger mailed in a standard envelope with your message written on the back of our card.
+        Perfect for friends, siblings, coworkers, or that one person who absolutely earned it.
+      </p>
+
+      <div class="ctaRow">
+        <a class="btn primary" href="PASTE_YOUR_STRIPE_LINK_HERE" target="_blank" rel="noopener">Send One Now</a>
+        <a class="btn" href="#how">How it works</a>
+        <a class="btn" href="#faq">FAQ</a>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="k">Discreet mail</div>
+          <div class="small">Ships in a normal envelope. No drama. Just delivery.</div>
+        </div>
+        <div class="card">
+          <div class="k">Your message</div>
+          <div class="small">You type it. We handwrite it on the back of our card.</div>
+        </div>
+        <div class="card">
+          <div class="k">One product</div>
+          <div class="small">Simple checkout. One click. One 🖕.</div>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="card">
+        <div class="sectionTitle">What you’re sending</div>
+        <p style="margin-top:6px">
+          A small 🖕 token + our branded card with QR code. We handwrite your note on the back and mail it to the address you enter at checkout.
+        </p>
+      </div>
+
+      <div class="hr" id="how"></div>
+
+      <div class="sectionTitle">How it works</div>
+      <div class="steps">
+        <div class="card">
+          <div class="stepNum">1) Checkout</div>
+          <p class="small">Enter the shipping address and your note. Pay securely.</p>
+        </div>
+        <div class="card">
+          <div class="stepNum">2) We write it</div>
+          <p class="small">We handwrite your message on the back of the card.</p>
+        </div>
+        <div class="card">
+          <div class="stepNum">3) We mail it</div>
+          <p class="small">We package it and drop it at the post office.</p>
+        </div>
+      </div>
+
+      <div class="hr" id="faq"></div>
+
+      <div class="sectionTitle">FAQ</div>
+      <div class="faq">
+        <div class="card">
+          <div class="k">Is it anonymous?</div>
+          <p class="small">We don’t include your name on the envelope. The recipient gets the message + item, not your identity.</p>
+        </div>
+        <div class="card">
+          <div class="k">Can I write anything?</div>
+          <p class="small">Keep it funny. We won’t mail threats, harassment, or illegal content.</p>
+        </div>
+        <div class="card">
+          <div class="k">How fast does it ship?</div>
+          <p class="small">We aim to mail quickly after purchase. USPS delivery time varies by location.</p>
+        </div>
+        <div class="card">
+          <div class="k">Refunds?</div>
+          <p class="small">Because it’s custom handwritten, all sales are typically final once mailed.</p>
+        </div>
+      </div>
+
+      <div class="foot">
+        © <span id="y"></span> FingerMailMe. This is a novelty prank product. By ordering, you agree your message may be written as submitted and must be non-threatening and lawful.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
