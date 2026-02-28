@@ -4,38 +4,274 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>FingerMailMe — Send a tiny 🖕 anonymously</title>
-  <meta name="description" content="Send a tiny middle finger anonymously in a regular envelope. Funny. Simple. Discreet." />
+  <meta name="description" content="Send a tiny 🖕 anonymously. A small gesture. A clear message." />
+
+  <!-- Optional: nicer system font rendering -->
+  <meta name="color-scheme" content="dark" />
+
   <style>
-    :root{--bg:#0b0b0f;--card:#141422;--text:#f5f5f7;--muted:#b9b9c6;--accent:#ff4d4d;--line:#2a2a3b}
+    :root{
+      --bg:#07070a;          /* deep matte black */
+      --panel:#0c0c10;       /* subtle lift */
+      --text:#f3f3f5;        /* near-white */
+      --muted:#b7b7c3;       /* soft gray */
+      --line:rgba(255, 215, 0, .22);
+      --yellow:#ffd700;      /* luxe yellow */
+      --yellow2:#e6c300;     /* hover/darker */
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+    }
+
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#07070b, #0b0b0f);color:var(--text)}
-    a{color:inherit}
-    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 70px}
-    .top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
-    .brand{font-weight:800;letter-spacing:.2px}
-    .pill{font-size:12px;border:1px solid var(--line);padding:6px 10px;border-radius:999px;color:var(--muted)}
-    .hero{margin-top:26px;background:radial-gradient(900px 300px at 20% 10%, rgba(255,77,77,.18), transparent 60%), var(--card);
-      border:1px solid var(--line);border-radius:18px;padding:26px}
-    h1{font-size:40px;line-height:1.05;margin:0 0 10px}
-    p{color:var(--muted);margin:10px 0 0;font-size:16px;line-height:1.5}
-    .ctaRow{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
-    .btn{display:inline-block;padding:12px 16px;border-radius:12px;text-decoration:none;font-weight:700;border:1px solid var(--line);background:#1a1a2a}
-    .btn.primary{background:var(--accent);border-color:transparent;color:#0b0b0f}
-    .btn:active{transform:translateY(1px)}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
-    .card{background:rgba(20,20,34,.65);border:1px solid var(--line);border-radius:16px;padding:16px}
-    .k{font-weight:800;margin:0 0 6px}
-    .small{font-size:13px}
-    .hr{height:1px;background:var(--line);margin:18px 0}
-    .sectionTitle{font-weight:800;margin:0 0 8px}
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .stepNum{font-weight:900;color:#fff;opacity:.9}
-    .faq{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .foot{margin-top:20px;color:var(--muted);font-size:12px}
-    @media (max-width:800px){
-      h1{font-size:34px}
-      .grid,.steps{grid-template-columns:1fr}
-      .faq{grid-template-columns:1fr}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(900px 520px at 50% -10%, rgba(255,215,0,.10), transparent 55%),
+                  radial-gradient(700px 460px at 50% 110%, rgba(255,215,0,.06), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .wrap{
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 28px 18px 84px;
+    }
+
+    /* Top */
+    .top{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      margin-top: 6px;
+      user-select:none;
+    }
+    .brand{
+      font-weight: 850;
+      letter-spacing: .3px;
+      font-size: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    /* Hero */
+    .hero{
+      margin: 42px auto 0;
+      text-align:center;
+      padding: 42px 18px 30px;
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(520px 240px at 50% 0%, rgba(255,215,0,.10), transparent 60%);
+      pointer-events:none;
+    }
+    .hero > *{position:relative}
+
+    h1{
+      margin: 0;
+      font-size: 46px;
+      line-height: 1.02;
+      letter-spacing: -0.7px;
+      font-weight: 900;
+    }
+    .sub{
+      margin: 14px 0 0;
+      font-size: 16px;
+      color: var(--muted);
+      letter-spacing: .2px;
+    }
+    .tagline{
+      margin: 10px 0 0;
+      font-size: 18px;
+      color: rgba(243,243,245,.92);
+      font-weight: 650;
+    }
+    .price{
+      margin: 18px 0 0;
+      font-size: 14px;
+      color: rgba(243,243,245,.84);
+      letter-spacing: .2px;
+    }
+
+    .ctaRow{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      margin-top: 20px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-weight: 900;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      transition: transform .08s ease, background .15s ease, border-color .15s ease;
+      min-width: 172px;
+    }
+    .btn:active{transform: translateY(1px)}
+    .btn.primary{
+      background: var(--yellow);
+      border-color: transparent;
+      color: #0a0a0c;
+      box-shadow: 0 14px 40px rgba(255,215,0,.18);
+      min-width: 220px; /* dominant block */
+    }
+    .btn.primary:hover{background: var(--yellow2)}
+    .btn.secondary:hover{background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.16)}
+
+    .divider{
+      width: 82%;
+      max-width: 520px;
+      height: 1px;
+      margin: 26px auto 16px;
+      background: linear-gradient(90deg, transparent, rgba(255,215,0,.65), transparent);
+      opacity: .75;
+    }
+
+    .trigger{
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: 700;
+      color: rgba(243,243,245,.94);
+    }
+    .trigger strong{color: var(--yellow); font-weight: 900}
+    .delivery{
+      margin: 8px 0 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* Sections */
+    .sections{
+      margin-top: 22px;
+      display: grid;
+      gap: 14px;
+    }
+    .card{
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      padding: 18px;
+      text-align: center;
+    }
+    .card h2{
+      margin: 0 0 8px;
+      font-size: 14px;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      color: rgba(243,243,245,.90);
+      font-weight: 900;
+    }
+    .card p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .howGrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .step{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.22);
+      padding: 14px;
+      text-align:center;
+    }
+    .step .n{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: rgba(255,215,0,.10);
+      border: 1px solid rgba(255,215,0,.25);
+      color: var(--yellow);
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+    .step .t{
+      font-weight: 850;
+      margin: 0;
+      font-size: 14px;
+    }
+    .step .d{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .faqGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .faq{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.22);
+      padding: 14px;
+      text-align:left;
+    }
+    .faq .q{
+      margin: 0 0 6px;
+      font-weight: 900;
+      letter-spacing: .2px;
+    }
+    .faq .a{
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .foot{
+      margin-top: 16px;
+      text-align:center;
+      color: rgba(183,183,195,.85);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .foot a{
+      color: rgba(255,215,0,.95);
+      border-bottom: 1px solid rgba(255,215,0,.35);
+    }
+
+    @media (max-width: 820px){
+      h1{font-size: 38px}
+      .howGrid{grid-template-columns: 1fr}
+      .faqGrid{grid-template-columns: 1fr}
+      .btn{min-width: 160px}
+      .btn.primary{min-width: 220px}
     }
   </style>
 </head>
@@ -44,90 +280,85 @@
   <div class="wrap">
     <div class="top">
       <div class="brand">FingerMailMe</div>
-      <div class="pill">Anonymous • Discreet • Funny</div>
     </div>
 
-    <div class="hero">
+    <main class="hero" aria-label="Hero">
       <h1>Send a tiny 🖕 anonymously.</h1>
-      <p>
-        A small middle finger mailed in a standard envelope with your message written on the back of our card.
-        Perfect for friends, siblings, coworkers, or that one person who absolutely earned it.
+      <div class="tagline">A small gesture. A clear message.</div>
+      <div class="price">$15.99 — includes shipping.</div>
+
+      <div class="ctaRow" aria-label="Primary actions">
+        <!-- Replace the placeholder below with your Stripe Payment Link when ready -->
+        <a class="btn primary" href="PASTE_YOUR_STRIPE_LINK_HERE" target="_blank" rel="noopener">Send One</a>
+        <a class="btn secondary" href="#how">How it works</a>
+        <a class="btn secondary" href="#faq">FAQ</a>
+      </div>
+
+      <div class="divider" role="separator" aria-hidden="true"></div>
+
+      <p class="trigger">
+        If you're thinking of someone, <strong>this is for them.</strong>
       </p>
+      <p class="delivery">We’ll handle the delivery.</p>
+    </main>
 
-      <div class="ctaRow">
-        <a class="btn primary" href="PASTE_YOUR_STRIPE_LINK_HERE" target="_blank" rel="noopener">Send One Now</a>
-        <a class="btn" href="#how">How it works</a>
-        <a class="btn" href="#faq">FAQ</a>
-      </div>
-
-      <div class="grid">
-        <div class="card">
-          <div class="k">Discreet mail</div>
-          <div class="small">Ships in a normal envelope. No drama. Just delivery.</div>
-        </div>
-        <div class="card">
-          <div class="k">Your message</div>
-          <div class="small">You type it. We handwrite it on the back of our card.</div>
-        </div>
-        <div class="card">
-          <div class="k">One product</div>
-          <div class="small">Simple checkout. One click. One 🖕.</div>
-        </div>
-      </div>
-
-      <div class="hr"></div>
-
+    <section class="sections" aria-label="Details">
       <div class="card">
-        <div class="sectionTitle">What you’re sending</div>
-        <p style="margin-top:6px">
-          A small 🖕 token + our branded card with QR code. We handwrite your note on the back and mail it to the address you enter at checkout.
+        <h2>What you’re sending</h2>
+        <p>
+          A tiny 🖕 token + our branded card with QR code. We handwrite your message on the back and mail it in a standard envelope.
         </p>
       </div>
 
-      <div class="hr" id="how"></div>
-
-      <div class="sectionTitle">How it works</div>
-      <div class="steps">
-        <div class="card">
-          <div class="stepNum">1) Checkout</div>
-          <p class="small">Enter the shipping address and your note. Pay securely.</p>
-        </div>
-        <div class="card">
-          <div class="stepNum">2) We write it</div>
-          <p class="small">We handwrite your message on the back of the card.</p>
-        </div>
-        <div class="card">
-          <div class="stepNum">3) We mail it</div>
-          <p class="small">We package it and drop it at the post office.</p>
-        </div>
-      </div>
-
-      <div class="hr" id="faq"></div>
-
-      <div class="sectionTitle">FAQ</div>
-      <div class="faq">
-        <div class="card">
-          <div class="k">Is it anonymous?</div>
-          <p class="small">We don’t include your name on the envelope. The recipient gets the message + item, not your identity.</p>
-        </div>
-        <div class="card">
-          <div class="k">Can I write anything?</div>
-          <p class="small">Keep it funny. We won’t mail threats, harassment, or illegal content.</p>
-        </div>
-        <div class="card">
-          <div class="k">How fast does it ship?</div>
-          <p class="small">We aim to mail quickly after purchase. USPS delivery time varies by location.</p>
-        </div>
-        <div class="card">
-          <div class="k">Refunds?</div>
-          <p class="small">Because it’s custom handwritten, all sales are typically final once mailed.</p>
+      <div class="card" id="how">
+        <h2>How it works</h2>
+        <div class="howGrid">
+          <div class="step">
+            <div class="n">1</div>
+            <p class="t">Checkout</p>
+            <p class="d">Enter the shipping address and your note. Pay securely.</p>
+          </div>
+          <div class="step">
+            <div class="n">2</div>
+            <p class="t">We write it</p>
+            <p class="d">We handwrite your message on the back of the card.</p>
+          </div>
+          <div class="step">
+            <div class="n">3</div>
+            <p class="t">We mail it</p>
+            <p class="d">We package it and drop it at the post office.</p>
+          </div>
         </div>
       </div>
 
-      <div class="foot">
-        © <span id="y"></span> FingerMailMe. This is a novelty prank product. By ordering, you agree your message may be written as submitted and must be non-threatening and lawful.
+      <div class="card" id="faq">
+        <h2>FAQ</h2>
+        <div class="faqGrid">
+          <div class="faq">
+            <p class="q">Is it anonymous?</p>
+            <p class="a">We don’t include your name on the envelope. The recipient gets the item + your note, not your identity.</p>
+          </div>
+          <div class="faq">
+            <p class="q">Where do you ship?</p>
+            <p class="a">United States only.</p>
+          </div>
+          <div class="faq">
+            <p class="q">Can I write anything?</p>
+            <p class="a">Keep it funny. We won’t mail threats, harassment, or illegal content. We reserve the right to refuse content that crosses the line.</p>
+          </div>
+          <div class="faq">
+            <p class="q">How fast does it ship?</p>
+            <p class="a">We aim to mail quickly after purchase. USPS delivery time varies by location.</p>
+          </div>
+        </div>
+
+        <div class="foot">
+          © <span id="y"></span> FingerMailMe. Novelty prank product.
+          <br />
+          By ordering, you confirm your message is lawful and non-threatening.
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 
   <script>
