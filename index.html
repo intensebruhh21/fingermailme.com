@@ -273,6 +273,19 @@
       .btn{min-width: 160px}
       .btn.primary{min-width: 220px}
     }
+    .media{
+  margin: 24px auto;
+  width: min(520px, 92%);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.02);
+}
+
+.media img{
+  width:100%;
+  display:block;
+}
   </style>
 </head>
 
@@ -286,7 +299,11 @@
       <h1>Send a tiny 🖕 anonymously.</h1>
       <div class="tagline">A small gesture. A clear message.</div>
       <div class="price">$15.99 — includes shipping.</div>
-
+      
+      <div class="media">
+        <img src="Finger.jpg" alt="Tiny Middle Finger product">
+      </div>
+      
       <div class="ctaRow" aria-label="Primary actions">
         <!-- Replace the placeholder below with your Stripe Payment Link when ready -->
         <a class="btn primary" href="https://buy.stripe.com/fZufZage26WSdkO9s64c800" target="_blank" rel="noopener">Send One</a>
@@ -310,6 +327,10 @@
         </p>
       </div>
 
+      <div class="media">
+       <img src="Fingers.jpg" alt="Tiny Middle Finger available in multiple colors">
+     </div>
+      
       <div class="card" id="how">
         <h2>How it works</h2>
         <div class="howGrid">
