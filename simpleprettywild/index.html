@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Happy Birthday</title>
+
+  <style>
+    :root {
+      --lavender: #c8b6e2;
+      --sage: #b7c9a8;
+      --grey: #2f3033;
+      --dark: #17181b;
+      --soft-white: #f7f2ea;
+      --gold: #e9d7a5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--dark);
+      color: var(--soft-white);
+      overflow-x: hidden;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 70px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at top, rgba(200,182,226,0.35), transparent 35%),
+        linear-gradient(160deg, #17181b, #2f3033, #3d3847);
+    }
+
+    h1 {
+      font-size: clamp(3rem, 12vw, 7rem);
+      margin: 0;
+      color: var(--lavender);
+      letter-spacing: 2px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 8vw, 4rem);
+      color: var(--lavender);
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      max-width: 760px;
+      margin: 18px auto;
+    }
+
+    .small {
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 28px;
+      border: 1px solid var(--lavender);
+      color: var(--soft-white);
+      text-decoration: none;
+      border-radius: 40px;
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(6px);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      width: 100%;
+      max-width: 950px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 24px;
+      padding: 24px;
+      min-height: 150px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    }
+
+    .card strong {
+      color: var(--sage);
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .soft {
+      background:
+        radial-gradient(circle at bottom left, rgba(183,201,168,0.26), transparent 38%),
+        linear-gradient(180deg, #242528, #1a1b1e);
+    }
+
+    .warm {
+      background:
+        radial-gradient(circle at top right, rgba(233,215,165,0.20), transparent 35%),
+        linear-gradient(180deg, #1a1b1e, #302f33);
+    }
+
+    .basement {
+      background:
+        radial-gradient(circle at top, rgba(233,215,165,0.28), transparent 25%),
+        linear-gradient(180deg, #111214, #222327, #3b3541);
+    }
+
+    .quote-box {
+      max-width: 850px;
+      padding: 35px;
+      border-radius: 30px;
+      background: rgba(0,0,0,0.28);
+      border: 1px solid rgba(233,215,165,0.25);
+      box-shadow: 0 0 70px rgba(233,215,165,0.13);
+    }
+
+    .quote-box p {
+      font-size: clamp(1.2rem, 4vw, 1.8rem);
+    }
+
+    .daisy {
+      position: absolute;
+      font-size: 2rem;
+      animation: float 7s ease-in-out infinite;
+      opacity: 0.7;
+    }
+
+    .daisy.one { top: 12%; left: 10%; }
+    .daisy.two { bottom: 15%; right: 12%; animation-delay: 1.5s; }
+    .daisy.three { top: 18%; right: 20%; animation-delay: 3s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-22px) rotate(8deg); }
+    }
+
+    .glow {
+      color: var(--gold);
+      text-shadow: 0 0 18px rgba(233,215,165,0.55);
+    }
+
+    .footer {
+      background: linear-gradient(180deg, #2f3033, #111214);
+    }
+
+    .fade-in {
+      animation: fadeIn 1.6s ease both;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .photo-placeholder {
+      border: 1px dashed rgba(255,255,255,0.3);
+      border-radius: 22px;
+      padding: 30px;
+      opacity: 0.8;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero" id="top">
+    <div class="daisy one">🌼</div>
+    <div class="daisy two">🌼</div>
+    <div class="daisy three">🌼</div>
+
+    <div class="fade-in">
+      <p class="small">simple, pretty and wild</p>
+      <h1>Happy Birthday<br>[HER NAME]</h1>
+      <p>This tiny corner of the internet exists for one day only.</p>
+      <a class="button" href="#stats">enter</a>
+    </div>
+  </section>
+
+  <section class="soft" id="stats">
+    <div>
+      <h2>Official Birthday File</h2>
+
+      <div class="card-grid">
+        <div class="card">
+          <strong>Favorite Colors</strong>
+          Lavender, sage, and grey.
+        </div>
+
+        <div class="card">
+          <strong>Known Phrase</strong>
+          “Gotcha.”
+        </div>
+
+        <div class="card">
+          <strong>Favorite Flower</strong>
+          Daisies — simple, pretty, and wild.
+        </div>
+
+        <div class="card">
+          <strong>Animal Energy</strong>
+          Probably otter. Honestly, that checks out.
+        </div>
+
+        <div class="card">
+          <strong>Ideal Weather</strong>
+          70 degrees and sunny.
+        </div>
+
+        <div class="card">
+          <strong>Current Status</strong>
+          Holding it together with water, perfectionism, and 🥴.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="warm">
+    <div>
+      <h2>The Things That Feel Like You</h2>
+
+      <div class="card-grid">
+        <div class="card">
+          <strong>Season</strong>
+          Fall. Cozy, calm, and a little dramatic.
+        </div>
+
+        <div class="card">
+          <strong>Smell</strong>
+          Eucalyptus.
+        </div>
+
+        <div class="card">
+          <strong>Place</strong>
+          Home. Which makes sense, because you make people feel safe.
+        </div>
+
+        <div class="card">
+          <strong>Coffee Order</strong>
+          Anything sugary. Obviously.
+        </div>
+
+        <div class="card">
+          <strong>Comfort Show</strong>
+          Love Island, because sometimes drama is self-care.
+        </div>
+
+        <div class="card">
+          <strong>Perfume Vibe</strong>
+          Bombshell / Seduction. Soft luxury energy.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div>
+      <h2>Things Worth Knowing</h2>
+
+      <p>
+        Some people might call it controlling.
+        I think it means you care hard enough to notice everything.
+      </p>
+
+      <p>
+        Some people might call it perfectionism.
+        I think it means you refuse to give people anything less than your best.
+      </p>
+
+      <p>
+        And if there is one thing that says the most about you,
+        it is how often your kids hear:
+      </p>
+
+      <h2 class="glow">“I love you.”</h2>
+    </div>
+  </section>
+
+  <section class="warm">
+    <div>
+      <h2>Memory Section</h2>
+      <p>Add photos, screenshots, or funny memories here.</p>
+
+      <div class="card-grid">
+        <div class="photo-placeholder">Photo or memory #1</div>
+        <div class="photo-placeholder">Photo or memory #2</div>
+        <div class="photo-placeholder">Photo or memory #3</div>
+        <div class="photo-placeholder">Photo or memory #4</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="basement">
+    <div class="quote-box">
+      <p>
+        The only way describing you as a basement could make sense is because your support holds up so much more than you even realize.
+      </p>
+
+      <p>
+        Even at your lowest, you still provide stability, comfort, and safety for so many people around you.
+      </p>
+
+      <p>
+        I hope the people around you help build the stairs back up so you can finally stand where you belong…
+      </p>
+
+      <p class="glow">
+        somewhere warm,<br>
+        somewhere seen,<br>
+        somewhere you can shine like the chandelier you were always meant to be.
+      </p>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div>
+      <h2>Known Crimes</h2>
+
+      <div class="card-grid">
+        <div class="card">
+          <strong>Crime #1</strong>
+          Caring too much and pretending it is normal.
+        </div>
+
+        <div class="card">
+          <strong>Crime #2</strong>
+          Saying “gotcha” like it fixes everything.
+        </div>
+
+        <div class="card">
+          <strong>Crime #3</strong>
+          Being emotionally tired but still showing up.
+        </div>
+
+        <div class="card">
+          <strong>Crime #4</strong>
+          Having suspiciously strong mom energy.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer">
+    <div>
+      <h2>Final Birthday Note</h2>
+
+      <p>
+        You are loved more than you probably let yourself believe.
+      </p>
+
+      <p>
+        You are doing better than you think.
+      </p>
+
+      <p>
+        And the world is better with you in it.
+      </p>
+
+      <h2 class="glow">Happy Birthday, [HER NAME].</h2>
+
+      <p class="small">gotcha 🥴</p>
+
+      <a class="button" href="#top">back to the top</a>
+    </div>
+  </section>
+
+</body>
+</html>
