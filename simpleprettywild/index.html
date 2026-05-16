@@ -304,9 +304,6 @@ section {
 <div id="daisy-container"></div>
   
   <section class="hero" id="top">
-    <div class="daisy one">🌼</div>
-    <div class="daisy two">🌼</div>
-    <div class="daisy three">🌼</div>
 
     <div class="fade-in">
       <p class="small">simple, pretty and wild</p>
@@ -525,6 +522,23 @@ for (let i = 0; i < 140; i++) {
   daisyContainer.appendChild(daisy);
 }
 </script>
-  
+  <script>
+  const daisyContainer = document.getElementById("daisy-container");
+
+  for (let i = 0; i < 160; i++) {
+    const daisy = document.createElement("div");
+    daisy.className = "floating-daisy";
+    daisy.textContent = "🌼";
+
+    daisy.style.left = Math.random() * 100 + "vw";
+    daisy.style.top = Math.random() * 100 + "vh";
+    daisy.style.fontSize = Math.random() * 24 + 8 + "px";
+    daisy.style.opacity = Math.random() * 0.55 + 0.2;
+    daisy.style.animationDuration = Math.random() * 10 + 6 + "s";
+    daisy.style.animationDelay = Math.random() * 5 + "s";
+
+    daisyContainer.appendChild(daisy);
+  }
+</script>
 </body>
 </html>
