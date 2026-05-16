@@ -181,6 +181,76 @@
       opacity: 0.8;
       font-size: 1rem;
     }
+    img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.card-grid {
+  grid-template-columns: 1fr;
+  max-width: 100%;
+}
+
+.card,
+.quote-box,
+.photo-placeholder {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+@media (max-width: 600px) {
+  section {
+    min-height: auto;
+    padding: 60px 16px;
+  }
+
+  h1 {
+    font-size: 3rem;
+    line-height: 1.05;
+  }
+
+  h2 {
+    font-size: 2.1rem;
+    line-height: 1.1;
+  }
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.55;
+  }
+
+  .quote-box {
+    padding: 24px 16px;
+    border-radius: 22px;
+  }
+
+  .card {
+    padding: 20px 16px;
+  }
+
+  .button {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .daisy.one {
+    left: 4%;
+  }
+
+  .daisy.two {
+    right: 4%;
+  }
+
+  .daisy.three {
+    right: 10%;
+  }
+}
   </style>
 </head>
 
