@@ -20,6 +20,11 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
     body {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
@@ -28,28 +33,40 @@
       overflow-x: hidden;
     }
 
-    html {
-      scroll-behavior: smooth;
+    img, video {
+      max-width: 100%;
+      height: auto;
     }
 
     section {
       min-height: 100vh;
+      width: 100%;
       padding: 70px 22px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       position: relative;
+      overflow-x: hidden;
+      z-index: 1;
     }
 
     .hero {
+      overflow: hidden;
       background:
         radial-gradient(circle at top, rgba(200,182,226,0.35), transparent 35%),
         linear-gradient(160deg, #17181b, #2f3033, #3d3847);
     }
 
+    .hero-content {
+      position: relative;
+      z-index: 5;
+      max-width: 1000px;
+    }
+
     h1 {
       font-size: clamp(3rem, 12vw, 7rem);
+      line-height: 1.05;
       margin: 0;
       color: var(--lavender);
       letter-spacing: 2px;
@@ -59,6 +76,7 @@
       font-size: clamp(2rem, 8vw, 4rem);
       color: var(--lavender);
       margin-bottom: 20px;
+      line-height: 1.1;
     }
 
     p {
@@ -70,7 +88,7 @@
 
     .small {
       font-size: 1rem;
-      opacity: 0.8;
+      opacity: 0.85;
     }
 
     .button {
@@ -83,6 +101,8 @@
       border-radius: 40px;
       background: rgba(255,255,255,0.06);
       backdrop-filter: blur(6px);
+      max-width: 100%;
+      white-space: normal;
     }
 
     .card-grid {
@@ -100,6 +120,8 @@
       padding: 24px;
       min-height: 150px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+      max-width: 100%;
+      overflow-wrap: break-word;
     }
 
     .card strong {
@@ -134,26 +156,11 @@
       background: rgba(0,0,0,0.28);
       border: 1px solid rgba(233,215,165,0.25);
       box-shadow: 0 0 70px rgba(233,215,165,0.13);
+      overflow-wrap: break-word;
     }
 
     .quote-box p {
       font-size: clamp(1.2rem, 4vw, 1.8rem);
-    }
-
-    .daisy {
-      position: absolute;
-      font-size: 2rem;
-      animation: float 7s ease-in-out infinite;
-      opacity: 0.7;
-    }
-
-    .daisy.one { top: 12%; left: 10%; }
-    .daisy.two { bottom: 15%; right: 12%; animation-delay: 1.5s; }
-    .daisy.three { top: 18%; right: 20%; animation-delay: 3s; }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-22px) rotate(8deg); }
     }
 
     .glow {
@@ -165,110 +172,91 @@
       background: linear-gradient(180deg, #2f3033, #111214);
     }
 
-    .fade-in {
-      animation: fadeIn 1.6s ease both;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(18px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
     .photo-placeholder {
       border: 1px dashed rgba(255,255,255,0.3);
       border-radius: 22px;
       padding: 30px;
       opacity: 0.8;
       font-size: 1rem;
+      max-width: 100%;
     }
-    img, video {
-  max-width: 100%;
-  height: auto;
-}
 
-section {
-  width: 100%;
-  overflow-x: hidden;
-}
+    #flower-container {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 2;
+    }
 
-.card-grid {
-  grid-template-columns: 1fr;
-  max-width: 100%;
-}
+    .floating-flower {
+      position: absolute;
+      display: block;
+      line-height: 1;
+      animation: floatAround ease-in-out infinite alternate;
+      color: rgba(255,255,255,0.78);
+      text-shadow: 0 0 10px rgba(255,255,255,0.45);
+      z-index: 2;
+    }
 
-.card,
-.quote-box,
-.photo-placeholder {
-  max-width: 100%;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-}
+    @keyframes floatAround {
+      from {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+      }
 
-@media (max-width: 600px) {
-  section {
-    min-height: auto;
-    padding: 60px 16px;
-  }
+      to {
+        transform: translateY(-25px) translateX(15px) rotate(8deg);
+      }
+    }
 
-  h1 {
-    font-size: 3rem;
-    line-height: 1.05;
-  }
+    @media (max-width: 600px) {
+      section {
+        min-height: auto;
+        padding: 60px 16px;
+      }
 
-  h2 {
-    font-size: 2.1rem;
-    line-height: 1.1;
-  }
+      .hero {
+        min-height: 100vh;
+      }
 
-  p {
-    font-size: 1.05rem;
-    line-height: 1.55;
-  }
+      h1 {
+        font-size: 3.05rem;
+      }
 
-  .quote-box {
-    padding: 24px 16px;
-    border-radius: 22px;
-  }
+      h2 {
+        font-size: 2.15rem;
+      }
 
-  .card {
-    padding: 20px 16px;
-  }
+      p {
+        font-size: 1.05rem;
+        line-height: 1.55;
+      }
 
-  .button {
-    max-width: 100%;
-    white-space: normal;
-  }
-#daisy-container {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 2;
-}
+      .card-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+      }
 
-.floating-daisy {
-  position: absolute;
-  display: block;
-  line-height: 1;
-  animation: floatAround ease-in-out infinite alternate;
-  z-index: 2;
-}
+      .card {
+        padding: 20px 16px;
+      }
 
-.hero .fade-in {
-  position: relative;
-  z-index: 5;
-}
+      .quote-box {
+        padding: 24px 16px;
+        border-radius: 22px;
+      }
+    }
   </style>
 </head>
 
 <body>
-<div id="daisy-container"></div>
-  
-  <section class="hero" id="top">
 
-    <div class="fade-in">
+  <section class="hero" id="top">
+    <div id="flower-container"></div>
+
+    <div class="hero-content">
       <p class="small">simple, pretty and wild</p>
       <h1>Happy Birthday<br>[HER NAME]</h1>
       <p>This tiny corner of the internet exists for one day only.</p>
@@ -443,17 +431,9 @@ section {
     <div>
       <h2>Final Birthday Note</h2>
 
-      <p>
-        You are loved more than you probably let yourself believe.
-      </p>
-
-      <p>
-        You are doing better than you think.
-      </p>
-
-      <p>
-        And the world is better with you in it.
-      </p>
+      <p>You are loved more than you probably let yourself believe.</p>
+      <p>You are doing better than you think.</p>
+      <p>And the world is better with you in it.</p>
 
       <h2 class="glow">Happy Birthday, [HER NAME].</h2>
 
@@ -464,44 +444,23 @@ section {
   </section>
 
   <script>
-const daisyContainer = document.getElementById("daisy-container");
+    const flowerContainer = document.getElementById("flower-container");
 
-for (let i = 0; i < 140; i++) {
-  const daisy = document.createElement("div");
-  daisy.classList.add("floating-daisy");
-  daisy.innerHTML = "🌼";
+    for (let i = 0; i < 140; i++) {
+      const flower = document.createElement("div");
+      flower.className = "floating-flower";
+      flower.textContent = "✿";
 
-  daisy.style.left = Math.random() * 100 + "vw";
-  daisy.style.top = Math.random() * 100 + "vh";
+      flower.style.left = Math.random() * 100 + "%";
+      flower.style.top = Math.random() * 100 + "%";
+      flower.style.fontSize = Math.random() * 24 + 8 + "px";
+      flower.style.opacity = Math.random() * 0.55 + 0.18;
+      flower.style.animationDuration = Math.random() * 10 + 6 + "s";
+      flower.style.animationDelay = Math.random() * 5 + "s";
 
-  daisy.style.fontSize = (Math.random() * 22 + 10) + "px";
+      flowerContainer.appendChild(flower);
+    }
+  </script>
 
-  daisy.style.animationDuration = (Math.random() * 10 + 6) + "s";
-
-  daisy.style.animationDelay = (Math.random() * 5) + "s";
-
-  daisy.style.opacity = Math.random() * 0.7 + 0.2;
-
-  daisyContainer.appendChild(daisy);
-}
-</script>
-  <script>
-  const daisyContainer = document.getElementById("daisy-container");
-
-  for (let i = 0; i < 160; i++) {
-    const daisy = document.createElement("div");
-    daisy.className = "floating-daisy";
-    daisy.textContent = "🌼";
-
-    daisy.style.left = Math.random() * 100 + "vw";
-    daisy.style.top = Math.random() * 100 + "vh";
-    daisy.style.fontSize = Math.random() * 24 + 8 + "px";
-    daisy.style.opacity = Math.random() * 0.55 + 0.2;
-    daisy.style.animationDuration = Math.random() * 10 + 6 + "s";
-    daisy.style.animationDelay = Math.random() * 5 + "s";
-
-    daisyContainer.appendChild(daisy);
-  }
-</script>
 </body>
 </html>
