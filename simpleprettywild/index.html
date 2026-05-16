@@ -266,6 +266,37 @@ section {
 }
   }
 }
+    #daisy-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.floating-daisy {
+  position: absolute;
+  display: block;
+  line-height: 1;
+  animation: floatAround ease-in-out infinite alternate;
+}
+
+@keyframes floatAround {
+  from {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+
+  to {
+    transform: translateY(-25px) translateX(15px) rotate(8deg);
+  }
+}
+
+.hero > div:not(#daisy-container) {
+  position: relative;
+  z-index: 2;
+}
   </style>
 </head>
 
